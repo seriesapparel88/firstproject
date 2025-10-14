@@ -1,0 +1,10 @@
+name: Listen To Issues
+on: 
+  issues:
+    types: [opened, labeled, closed]
+jobs:
+  process_issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output github context
+        run: echo "${{ toJSON(github) }}"
